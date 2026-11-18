@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arbeitsauftrag: Was auf den Auftragszettel gehört | Laufzettel</title>
+  <meta name="description" content="Was gehört auf einen Arbeitsauftrag? Angaben für Monteur und Büro, Stundenzettel und Regiebericht, Papier oder digital, mit Muster-Gliederung zum Übernehmen." />
+  <meta name="theme-color" content="#121315" />
+  <!-- seo:start -->
+  <link rel="icon" type="image/png" href="/laufzettel-icon.png" />
+  <link rel="canonical" href="https://laufzettel.dexware.app/ratgeber-arbeitsauftrag.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Laufzettel" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:title" content="Arbeitsauftrag im Handwerk: Was auf den Auftragszettel gehört" />
+  <meta property="og:description" content="Was gehört auf einen Arbeitsauftrag? Angaben für Monteur und Büro, Stundenzettel und Regiebericht, Papier oder digital, mit Muster-Gliederung zum Übernehmen." />
+  <meta property="og:url" content="https://laufzettel.dexware.app/ratgeber-arbeitsauftrag.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Arbeitsauftrag im Handwerk: Was auf den Auftragszettel gehört" />
+  <meta name="twitter:description" content="Was gehört auf einen Arbeitsauftrag? Angaben für Monteur und Büro, Stundenzettel und Regiebericht, Papier oder digital, mit Muster-Gliederung zum Übernehmen." />
+  <!-- seo:end -->
+  <link rel="preload" href="assets/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+    @font-face { font-family: 'Inter'; src: url('assets/inter-latin-var.woff2') format('woff2');
+      font-weight: 100 900; font-style: normal; font-display: swap; }
+    :root {
+      --accent: #F5B544;
+      --on-accent: #1A1305;
+      --radius: 16px;
+      --wrap: 1120px;
+    }
+    html.light {
+      --bg: #ffffff;
+      --bg-soft: color-mix(in oklab, #f7f7f9 96%, var(--accent));
+      --surface: #ffffff;
+      --border: color-mix(in oklab, #e7e7eb 94%, var(--accent));
+      --ink: #0d0d12;
+      --muted: #5c5c69;
+      --accent-text: color-mix(in oklab, var(--accent) 82%, #000);
+      --accent-soft: color-mix(in oklab, var(--accent) 10%, #fff);
+      --card: var(--surface);
+      --shadow: 0 1px 2px rgba(16,16,24,.04), 0 8px 24px -12px rgba(16,16,24,.12);
+      color-scheme: light;
+    }
+    html.dark {
+      --bg: #121315;
+      --bg-soft: color-mix(in oklab, #121315 96%, #fff);
+      --surface: color-mix(in oklab, #121315 93%, #fff);
+      --card: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+      --border: rgba(255,255,255,.085);
+      --ink: #f6f5f7;
+      --muted: #aaa4ad;
+      --accent-text: color-mix(in oklab, var(--accent) 70%, #fff);
+      --accent-soft: color-mix(in oklab, var(--accent) 18%, transparent);
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -16px rgba(0,0,0,.6);
+      color-scheme: dark;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+    body { background: var(--bg); color: var(--ink);
+      font: 400 16px/1.6 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-feature-settings: 'cv11', 'ss01'; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: var(--accent-text); text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    img { max-width: 100%; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+    @media (max-width: 600px) { .wrap { padding: 0 16px; } }
+    .i { width: 20px; height: 20px; flex: none; }
+
+    /* Kopfzeile */
+    .top { position: sticky; top: 0; z-index: 40; background: color-mix(in oklab, var(--bg) 82%, transparent);
+      -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
+      border-bottom: 1px solid transparent; transition: border-color .2s; }
+    .top.scrolled { border-bottom-color: var(--border); }
+    .top .wrap { display: flex; align-items: center; gap: 28px; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 650; font-size: 17px; letter-spacing: -.01em; }
+    .brand:hover { text-decoration: none; }
+    /* Feiner heller Rand wie auf dem Hub: dunkle Symbole (TourDex, GurtDex, HebeDex, KfzDex) verschwinden sonst im dunklen Hintergrund. */
+    .brand img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 0 0 1px rgba(255,255,255,.16); }
+    .brand .wm span { color: var(--accent-text); }
+    .top nav { display: flex; gap: 24px; margin-left: auto; }
+    .top nav a { color: var(--muted); font-size: 14.5px; font-weight: 500; }
+    .top nav a:hover { color: var(--ink); text-decoration: none; }
+    @media (max-width: 760px) { .top nav { display: none; } .top .btn { margin-left: auto; } }
+
+    /* Knöpfe */
+    .btn { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: 12px;
+      font-weight: 600; font-size: 15.5px; background: var(--accent); color: var(--on-accent);
+      box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 6px 20px -8px color-mix(in oklab, var(--accent) 70%, transparent);
+      transition: transform .15s, box-shadow .15s, background .15s; }
+    .btn:hover { text-decoration: none; transform: translateY(-1px);
+      box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 10px 26px -8px color-mix(in oklab, var(--accent) 80%, transparent); }
+    .btn.sm { height: 38px; padding: 0 16px; font-size: 14px; border-radius: 10px; }
+    .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--border); }
+    .btn.ghost:hover { background: var(--bg-soft); }
+    .btn .play { width: 14px; height: 14px; fill: currentColor; stroke: none; }
+    .btn .i { width: 16px; height: 16px; }
+
+    /* Hero */
+    .hero { position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: -20% -10% auto 40%; height: 120%; z-index: -1; pointer-events: none;
+      background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 22%, transparent), transparent 75%); }
+    .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; padding-top: 56px; padding-bottom: 40px; }
+    .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--accent-text);
+      background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; margin-bottom: 22px; }
+    h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.05; font-weight: 750; letter-spacing: -.035em; }
+    h1 em { font-style: normal; color: var(--accent-text); }
+    .sub { margin-top: 20px; font-size: 18px; line-height: 1.6; color: var(--muted); max-width: 520px; }
+    .sub strong { color: var(--ink); font-weight: 600; }
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hint { margin-top: 12px; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+    .hint .i { width: 15px; height: 15px; }
+    .ticks { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); }
+    .ticks li { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 500; }
+    .ticks .i { width: 17px; height: 17px; color: var(--accent-text); }
+    .shots { position: relative; height: 560px; }
+    .shots .phone { position: absolute; }
+    .shots .phone.a { left: 4%; top: 0; z-index: 2; }
+    .shots .phone.b { right: 0; top: 64px; transform: scale(.9); transform-origin: top right; opacity: .96; }
+    @media (max-width: 900px) {
+      .hero .wrap { grid-template-columns: 1fr; gap: 36px; padding-top: 36px; }
+      .shots { height: 380px; max-width: 420px; width: 100%; margin: 0 auto;
+        -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+      .shots .phone { --pw: 210px; }
+      .shots .phone.a { left: 2%; } .shots .phone.b { top: 40px; }
+    }
+
+    /* Handyrahmen */
+    .phone { --pw: 262px; width: var(--pw); padding: 8px; border-radius: calc(var(--pw) * .16);
+      background: linear-gradient(160deg, #2b2b31, #0e0e11 40%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 0 0 1px rgba(0,0,0,.5), 0 40px 70px -30px rgba(10,10,20,.55), 0 18px 30px -18px rgba(10,10,20,.35); }
+    .screen { position: relative; border-radius: calc(var(--pw) * .13); overflow: hidden; background: var(--bar); padding-top: calc(var(--pw) * .1); }
+    .screen::before { content: ''; position: absolute; top: calc(var(--pw) * .03); left: 50%; transform: translateX(-50%);
+      width: 30%; height: calc(var(--pw) * .075); border-radius: 99px; background: #000; }
+    .screen img { display: block; width: 100%; height: auto; }
+
+    /* Abschnitte */
+    section { padding: 80px 0; }
+    section.soft { background: var(--bg-soft); }
+    @media (max-width: 700px) {
+      section { padding: 52px 0; }
+      .head { margin-bottom: 24px; }
+      .lead { font-size: 16px; }
+      .sub { font-size: 16.5px; }
+      .cta .btn { flex: 1 1 100%; justify-content: center; }
+      .ticks { gap: 8px 16px; }
+      .rules li { padding: 14px 16px; grid-template-columns: 32px 1fr; gap: 12px; font-size: 14.5px; }
+      .rules .ic { width: 32px; height: 32px; }
+    }
+    .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--accent-text); margin-bottom: 10px; }
+    h2 { font-size: clamp(27px, 3.4vw, 38px); line-height: 1.12; font-weight: 720; letter-spacing: -.03em; max-width: 760px; }
+    .lead { margin-top: 14px; font-size: 17px; color: var(--muted); max-width: 620px; }
+    .lead strong { color: var(--ink); font-weight: 600; }
+    .head { margin-bottom: 40px; }
+
+    /* Pflicht */
+    .duty { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+    .rules { list-style: none; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .rules li { display: grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 18px 22px; border-top: 1px solid var(--border); font-size: 15px; color: var(--muted); }
+    .rules li:first-child { border-top: 0; }
+    .rules b { display: block; color: var(--ink); font-weight: 600; font-size: 15.5px; margin-bottom: 1px; }
+    .ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent-text); }
+    @media (max-width: 860px) { .duty { grid-template-columns: 1fr; gap: 28px; } }
+
+    /* Funktionen */
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .feature { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+    .feature .ic { margin-bottom: 16px; }
+    .feature h3 { font-size: 16.5px; font-weight: 640; letter-spacing: -.01em; margin-bottom: 6px; }
+    .feature p { font-size: 15px; color: var(--muted); line-height: 1.55; }
+    @media (max-width: 900px) { .features { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .features { grid-template-columns: 1fr; gap: 10px; }
+      .feature { padding: 16px; display: grid; grid-template-columns: 36px 1fr; gap: 0 14px; }
+      .feature .ic { margin: 0; grid-row: span 2; } .feature p { font-size: 14.5px; } }
+
+    /* Ablauf */
+    .flow { display: grid; grid-template-columns: 1fr auto; gap: 72px; align-items: center; }
+    .steps { list-style: none; counter-reset: s; margin-top: 32px; }
+    .steps li { counter-increment: s; position: relative; padding: 0 0 26px 56px; }
+    .steps li:last-child { padding-bottom: 0; }
+    .steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center; font-weight: 650; font-size: 15px; background: var(--accent); color: var(--on-accent); }
+    .steps li:not(:last-child)::after { content: ''; position: absolute; left: 17.5px; top: 40px; bottom: 6px; width: 1px; background: var(--border); }
+    .steps b { display: block; font-size: 17px; font-weight: 640; margin-bottom: 4px; }
+    .steps p { color: var(--muted); font-size: 15.5px; }
+    .flow .phone { --pw: 280px; }
+    @media (max-width: 860px) { .flow { grid-template-columns: 1fr; } .flow > div:last-child { display: none; } .steps { margin-top: 24px; } }
+
+    /* Preise */
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+    .plan { position: relative; display: flex; flex-direction: column; min-width: 0; background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .plan.pro { border-color: color-mix(in oklab, var(--accent) 55%, var(--border)); box-shadow: 0 0 0 1px color-mix(in oklab, var(--accent) 55%, transparent), var(--shadow); }
+    .plan .badge { position: absolute; top: -11px; left: 28px; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 99px; background: var(--accent); color: var(--on-accent); }
+    .plan h3 { font-size: 15px; font-weight: 600; color: var(--muted); }
+    .price { margin-top: 10px; font-size: 38px; font-weight: 720; letter-spacing: -.03em; line-height: 1.1; }
+    .price small { font-size: 15px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+    .per { font-size: 14px; color: var(--muted); margin-top: 4px; min-height: 22px; }
+    .plan ul { list-style: none; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); display: grid; gap: 10px; }
+    .plan li { display: flex; gap: 10px; font-size: 15px; }
+    .plan li .i { width: 18px; height: 18px; margin-top: 2px; color: var(--accent-text); }
+    .plan.suite { color: #f4f4f6; border: 1px solid transparent;
+      background: linear-gradient(180deg, #121218, #0b0b0f) padding-box, linear-gradient(140deg, #3b82f6, #8b5cf6 55%, var(--accent)) border-box; }
+    .plan.suite h3, .plan.suite .per, .plan.suite .price small { color: #a3a3ad; }
+    .plan.suite ul { border-color: rgba(255,255,255,.1); }
+    .plan.suite li .i { color: #f4f4f6; }
+    .icons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 22px; }
+    .icons img { width: 26px; height: 26px; border-radius: 7px; }
+    .fine { margin-top: 20px; font-size: 13.5px; color: var(--muted); }
+    .trust { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px 26px; font-size: 14px; color: var(--muted); }
+    .trust li { display: flex; align-items: center; gap: 8px; }
+    .trust .i { width: 18px; height: 18px; flex: none; color: var(--accent-text); }
+    .trust a { color: inherit; }
+    @media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 480px; } }
+
+    /* Teamgrößen-Stufen (nur Apps mit pricing.teams) */
+    .teams { margin-top: 28px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px 28px; }
+    .teams h3 { font-size: 19px; font-weight: 650; }
+    .teams .lead { margin-top: 8px; font-size: 15px; }
+    .tiers { width: 100%; margin-top: 18px; border-collapse: collapse; font-size: 15px; }
+    .tiers th { text-align: left; font-size: 12.5px; font-weight: 600; color: var(--muted); padding: 0 10px 8px 0; }
+    .tiers td { padding: 12px 10px 12px 0; border-top: 1px solid var(--border); vertical-align: top; }
+    .tiers td:first-child { font-weight: 650; }
+    .tiers .num { text-align: right; white-space: nowrap; }
+    .tiers tr.hl td { color: var(--accent-text); }
+    .teams .fine { margin-top: 14px; }
+    @media (max-width: 560px) { .teams { padding: 20px 16px; } .tiers { font-size: 14px; } .tiers .hide-s { display: none; } }
+
+    /* FAQ */
+    .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+    .faq details { border-bottom: 1px solid var(--border); }
+    .faq details:first-child { border-top: 1px solid var(--border); }
+    .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; align-items: center;
+      padding: 18px 2px; font-weight: 600; font-size: 16px; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary .i { color: var(--muted); transition: transform .2s; }
+    .faq details[open] summary .i { transform: rotate(180deg); }
+    .faq .a { padding: 0 2px 20px; color: var(--muted); font-size: 15.5px; max-width: 640px; }
+    .ask { margin-top: 18px; color: var(--muted); font-size: 15px; display: flex; align-items: center; gap: 8px; }
+    @media (max-width: 860px) { .faq { grid-template-columns: 1fr; gap: 24px; } }
+
+    /* Familie */
+    .family { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 32px; }
+    .family a { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 6px 14px; border-radius: 14px;
+      color: var(--ink); text-align: center; transition: background .15s; }
+    .family a:hover { background: var(--surface); text-decoration: none; box-shadow: var(--shadow); }
+    .family a[aria-disabled] { cursor: default; opacity: .75; } .family a[aria-disabled]:hover { background: none; box-shadow: none; }
+    .family img { width: 44px; height: 44px; border-radius: 11px; box-shadow: 0 0 0 1px rgba(255,255,255,.16); }
+    .family b { font-size: 13.5px; font-weight: 600; line-height: 1.2; }
+    .family small { font-size: 12px; color: var(--muted); line-height: 1.3; }
+    .family-row { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; }
+    @media (max-width: 900px) { .family { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 480px) { .family { grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 20px; } .family a { padding: 10px 2px; gap: 6px; }
+      .family img { width: 40px; height: 40px; } .family b { font-size: 11.5px; } .family small { display: none; } }
+
+    /* Prüfpunkte (optional) */
+    .points { margin-top: 16px; padding: 22px 24px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); }
+    .points p { font-size: 15px; color: var(--muted); margin-bottom: 14px; }
+    .points p b { color: var(--ink); font-weight: 600; margin-right: 4px; }
+    .points ol { list-style: none; counter-reset: p; display: flex; flex-wrap: wrap; gap: 8px; }
+    .points li { counter-increment: p; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;
+      padding: 5px 12px 5px 5px; border-radius: 99px; background: var(--bg-soft); border: 1px solid var(--border); }
+    .points li::before { content: counter(p); width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
+      font-size: 12px; font-weight: 650; background: var(--accent-soft); color: var(--accent-text); }
+    .points.plain li { padding: 5px 12px; }
+    .points.plain li::before { display: none; }
+    @media (max-width: 600px) { .points { padding: 16px; } .points li { font-size: 13px; } }
+
+    /* Fußzeile */
+    footer { border-top: 1px solid var(--border); padding: 32px 0 40px; font-size: 14px; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between; }
+    footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+    footer .note { display: block; font-size: 13px; line-height: 1.55; margin-bottom: 20px; max-width: var(--wrap); }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--ink); }
+
+    /* Handy: Feinschliff (muss nach den Grundregeln stehen) */
+    @media (max-width: 700px) {
+      .duty { gap: 22px; }
+      .plan { padding: 22px; }
+      .plan ul { margin-top: 16px; padding-top: 14px; gap: 7px; }
+      .price { font-size: 34px; }
+      .plans { gap: 20px; }
+      .faq summary { padding: 15px 2px; font-size: 15.5px; }
+      .rules li { padding: 13px 16px; }
+      .family-row .btn { order: 2; }
+    }
+
+    /* Einblenden beim Scrollen — nur mit JS und ohne reduzierte Bewegung */
+    .js .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+    .js .rv.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+    /* Look „laufzettel“: motif=pegboard, soft=deep, edge=panel, cards=rail, steps=cards, head=tag, h2=normal, duty=grid, faq=boxes, radius=14 (looks.js) */
+    :root { --radius: 14px; }
+    .btn { border-radius: 11px; }
+    .btn.sm { border-radius: 9px; }
+    .ic { border-radius: 9px; }
+    html.dark { --bg-soft: color-mix(in oklab, var(--bg) 62%, #000); }
+    section.soft { box-shadow: inset 0 1px 0 rgba(255,255,255,.05), inset 0 -1px 0 rgba(255,255,255,.05); }
+    section.soft { margin: 0 clamp(8px, 2vw, 28px); border-radius: clamp(22px, 3.4vw, 44px);
+      border: 1px solid color-mix(in oklab, var(--accent) 22%, transparent); }
+    section.soft + section.soft { margin-top: 16px; }
+    section.soft { position: relative; isolation: isolate; }
+    section.soft::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; border-radius: inherit;
+      background: var(--accent); opacity: 0.12;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Ccircle cx='13' cy='13' r='2.4' fill='%23000'/%3E%3C/svg%3E"), linear-gradient(100deg, transparent 18%, #000 75%); -webkit-mask-size: 26px 26px, 100% 100%; -webkit-mask-repeat: repeat, no-repeat; -webkit-mask-composite: source-in;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Ccircle cx='13' cy='13' r='2.4' fill='%23000'/%3E%3C/svg%3E"), linear-gradient(100deg, transparent 18%, #000 75%); mask-size: 26px 26px, 100% 100%; mask-repeat: repeat, no-repeat; mask-composite: intersect; }
+    @media (max-width: 700px) { section.soft::before { opacity: 0.084; } }
+    .feature { border-left: 3px solid var(--accent); border-radius: 3px var(--radius) var(--radius) 3px; padding: 22px 24px;
+      display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; align-items: center; }
+    .feature .ic { width: 30px; height: 30px; margin: 0; grid-row: auto; background: none; }
+    .feature .ic .i { width: 22px; height: 22px; }
+    .feature h3 { margin: 0; }
+    .feature p { grid-column: 1 / -1; }
+    @media (max-width: 600px) { .feature { padding: 16px 18px; grid-template-columns: auto 1fr; } .feature .ic { grid-row: auto; } }
+    .flow { grid-template-columns: 1fr; gap: 0; }
+    .flow > div:last-child { display: none; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .steps li { padding: 70px 24px 24px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .steps li:last-child { padding-bottom: 24px; }
+    .steps li::before { content: counter(s, decimal-leading-zero); left: 24px; top: 22px; width: auto; height: auto; padding: 0;
+      background: none; color: var(--accent-text); font-size: 30px; font-weight: 780; letter-spacing: -.03em; display: block; line-height: 1; }
+    .steps li:not(:last-child)::after { content: ''; left: auto; right: 24px; top: 36px; bottom: auto; width: 34%; height: 1px;
+      background: linear-gradient(90deg, color-mix(in oklab, var(--accent) 60%, transparent), transparent); }
+    @media (max-width: 600px) { .steps li { padding: 58px 18px 18px; } .steps li:last-child { padding-bottom: 18px; } .steps li::before { left: 18px; top: 18px; font-size: 26px; } }
+    .eyebrow { display: inline-block; padding: 5px 11px; font-size: 11.5px; text-transform: uppercase; letter-spacing: .12em;
+      border: 1px solid color-mix(in oklab, var(--accent) 50%, transparent); border-radius: calc(var(--radius) * .5);
+      background: color-mix(in oklab, var(--accent) 9%, transparent); margin-bottom: 14px; }
+    .duty { grid-template-columns: 1fr; gap: 32px; }
+    .duty > .rv:first-child { max-width: 760px; }
+    .duty .rules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; background: none; border: 0; box-shadow: none; }
+    .duty .rules li, .duty .rules li:first-child { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); }
+    .duty .rules li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    @media (max-width: 760px) { .duty .rules { grid-template-columns: 1fr; } }
+    .faq details, .faq details:first-child { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 0 18px; margin-bottom: 10px; }
+    .faq details[open] { border-color: color-mix(in oklab, var(--accent) 45%, var(--border)); }
+    .faq summary { padding: 16px 0; }
+    .faq .a { padding: 0 0 18px; }
+
+    .show { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .show-points { margin-top: 24px; }
+    @media (max-width: 860px) { .show { grid-template-columns: 1fr; gap: 28px; } .show-visual { order: 2; } }
+    .pdlive { max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+    .pd-card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 22px; border-radius: 18px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); animation: pdCard 12s infinite both; }
+    .pd-card::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 5px; border-radius: 0 5px 5px 0; background: #60A5FA; animation: pdBar 12s infinite both; }
+    .pd-top { display: flex; align-items: center; justify-content: space-between; }
+    .pd-pills { position: relative; display: inline-grid; }
+    .pd-pill { grid-area: 1 / 1; justify-self: start; padding: 4px 11px; border-radius: 999px; font-size: 13px; font-weight: 750; opacity: 0; }
+    .pd-pill.p1 { background: rgba(96,165,250,.18); color: #60A5FA; animation: pdP1 12s infinite both; }
+    .pd-pill.p2 { background: rgba(167,139,250,.18); color: #A78BFA; animation: pdP2 12s infinite both; }
+    .pd-pill.p3 { background: rgba(34,197,94,.18); color: #22C55E; animation: pdP3 12s infinite both; }
+    .pd-pill.p4 { background: rgba(148,163,184,.18); color: #94A3B8; animation: pdP4 12s infinite both; }
+    .pd-time { font-variant-numeric: tabular-nums; }
+    .pd-title { font-size: 19px; }
+    .pd-meta { color: var(--muted); font-size: 14px; }
+    .pd-who { position: absolute; right: 16px; bottom: 14px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; font-size: 11px; font-weight: 800; background: rgba(96,165,250,.2); color: #60A5FA; }
+    .pd-log { list-style: none; margin: 0; padding: 0 0 0 8px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--muted); }
+    .pd-log li { opacity: 0; } .pd-log span { display: inline-block; min-width: 46px; color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+    .pd-log .l1 { animation: pdL1 12s infinite both; } .pd-log .l2 { animation: pdL2 12s infinite both; } .pd-log .l3 { animation: pdL3 12s infinite both; }
+    @keyframes pdP1 { 0%, 18% { opacity: 1; } 22%, 100% { opacity: 0; } }
+    @keyframes pdP2 { 0%, 20% { opacity: 0; } 24%, 40% { opacity: 1; transform: none; } 44%, 100% { opacity: 0; } }
+    @keyframes pdP3 { 0%, 42% { opacity: 0; } 46%, 66% { opacity: 1; } 70%, 100% { opacity: 0; } }
+    @keyframes pdP4 { 0%, 68% { opacity: 0; } 72%, 96% { opacity: 1; } 100% { opacity: 0; } }
+    @keyframes pdBar { 0%, 20% { background: #60A5FA; } 24%, 42% { background: #A78BFA; } 46%, 68% { background: #22C55E; } 72%, 100% { background: #94A3B8; } }
+    @keyframes pdCard { 0%, 44% { box-shadow: var(--shadow); } 48%, 66% { box-shadow: 0 0 0 1px rgba(34,197,94,.45), 0 14px 34px -16px rgba(34,197,94,.7); } 70%, 100% { box-shadow: var(--shadow); } }
+    @keyframes pdL1 { 0%, 20% { opacity: 0; transform: translateY(6px); } 24%, 96% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+    @keyframes pdL2 { 0%, 42% { opacity: 0; transform: translateY(6px); } 46%, 96% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+    @keyframes pdL3 { 0%, 68% { opacity: 0; transform: translateY(6px); } 72%, 96% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .pd-card, .pd-card::before, .pd-pill, .pd-log li { animation: none !important; }
+      .pd-pill.p4, .pd-log li { opacity: 1 !important; transform: none !important; }
+      .pd-card::before { background: #94A3B8; }
+    }
+    /* nur 2 Tarife (noSuite) */
+    .plans.two { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-inline: auto; }
+    @media (max-width: 960px) { .plans.two { grid-template-columns: 1fr; max-width: 480px; } }
+
+    /* Handy-Wand + Lichter in der App-Farbe (Kopfbereich) */
+    .hero.walled { isolation: isolate; min-height: min(780px, 100svh); display: flex; align-items: center;
+      background:
+        radial-gradient(55% 70% at 80% 30%, color-mix(in oklab, var(--accent) 34%, transparent), transparent 70%),
+        radial-gradient(40% 55% at 100% 90%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%),
+        radial-gradient(45% 60% at 0% 0%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 70%),
+        var(--bg); }
+    .hero.walled::before { display: none; }
+    .hero.walled::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(90deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 92%, transparent) 30%, color-mix(in oklab, var(--bg) 40%, transparent) 56%, transparent 78%),
+        linear-gradient(0deg, var(--bg) 0%, color-mix(in oklab, var(--bg) 60%, transparent) 12%, transparent 34%); }
+    .hero.walled > .wrap { position: relative; z-index: 1; width: 100%; }
+    .wall { position: absolute; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+    .wall-in { position: absolute; top: -38%; left: 26%; width: 115%; height: 190%; display: flex; gap: 26px;
+      transform: perspective(2200px) rotateX(14deg) rotateZ(-15deg); transform-origin: 50% 0; opacity: .5; }
+    .col { flex: none; width: 160px; }
+    .col:nth-child(even) { margin-top: -140px; }
+    .track { animation: wall-up var(--d) linear infinite; will-change: transform; }
+    .col:nth-child(even) .track { animation-name: wall-down; }
+    @keyframes wall-up { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, -50%, 0); } }
+    @keyframes wall-down { from { transform: translate3d(0, -50%, 0); } to { transform: translate3d(0, 0, 0); } }
+    .wall.paused .track { animation-play-state: paused; }
+    @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
+    .mp { position: relative; margin-bottom: 26px; padding: 5px; border-radius: 26px; background: linear-gradient(160deg, #343947, #0d1018 45%);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset, 0 24px 40px -22px rgba(0,0,0,.9); }
+    .mp::before { content: ''; display: block; height: 14px; border-radius: 21px 21px 0 0; background: var(--bar); }
+    .mp::after { content: ''; position: absolute; top: 9px; left: 50%; width: 32%; height: 8px; transform: translateX(-50%); border-radius: 99px; background: #000; }
+    .mp img { display: block; width: 100%; height: auto; aspect-ratio: 150 / 290; object-fit: cover; object-position: top; border-radius: 0 0 21px 21px; }
+    /* Lichtschein hinter den beiden Handys */
+    .hero.walled .shots::before { content: ''; position: absolute; inset: 8% 4% 10%; border-radius: 50%; z-index: -1; filter: blur(48px);
+      background: radial-gradient(closest-side, color-mix(in oklab, var(--accent) 55%, transparent), color-mix(in oklab, var(--accent) 18%, transparent) 60%, transparent); }
+    @media (max-width: 900px) {
+      .hero.walled { min-height: 0; }
+      .hero.walled::after { background: linear-gradient(180deg, color-mix(in oklab, var(--bg) 92%, transparent) 0%, color-mix(in oklab, var(--bg) 74%, transparent) 50%, color-mix(in oklab, var(--bg) 55%, transparent) 75%, var(--bg) 100%); }
+      .wall-in { left: -30%; top: -20%; width: 170%; opacity: .42; }
+    }
+    @media (max-width: 480px) { .col { width: 128px; } .wall-in { gap: 18px; } }
+
+    /* Kopf „laufzettel“: phones=fan, wall=tight, speed=1.05, frame=tint (looks.js) */
+    .shots .phone.a { left: 2%; top: 26px; transform: rotate(-7deg); transform-origin: 50% 100%; }
+    .shots .phone.b { right: 0; top: 34px; transform: rotate(8deg) scale(.92); transform-origin: 50% 100%; opacity: 1; }
+    @media (max-width: 900px) { .shots .phone.a { top: 18px; } .shots .phone.b { top: 24px; } }
+    .wall-in { gap: 16px; left: 30%; transform: perspective(2200px) rotateX(12deg) rotateZ(-10deg); }
+    .col { width: 116px; } .mp { margin-bottom: 16px; }
+    @media (max-width: 900px) { .wall-in { left: -24%; top: -20%; width: 170%; opacity: .42; } }
+    .shots .phone { background: linear-gradient(160deg, color-mix(in oklab, var(--accent) 55%, #2b2b31), #0e0e11 46%); }
+    .track { animation-duration: calc(var(--d) * 1.05); }
+    .mp { border-radius: 24px; } .mp::before { border-radius: 19px 19px 0 0; } .mp img { border-radius: 0 0 19px 19px; }
+  </style>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <style>
+    /* Ratgeber-Ergänzungen (Tabelle, Kurzantwort, Quellen) — neutral, passt zu hellem und dunklem Design */
+    .rg-scroll { overflow-x: auto; margin: 10px 0 22px; -webkit-overflow-scrolling: touch; }
+    .rg-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 520px; }
+    .rg-table th, .rg-table td { border: 1px solid rgba(127,127,127,.32); padding: 9px 11px; text-align: left; vertical-align: top; }
+    .rg-table th { background: rgba(127,127,127,.12); font-weight: 800; }
+    .rg-kurz { border: 1px solid rgba(127,127,127,.35); border-radius: 12px; padding: 16px 18px; margin: 18px 0 24px; background: rgba(127,127,127,.07); }
+    .rg-kurz > b:first-child { display: block; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; opacity: .8; }
+    .rg-kurz ul { margin: 6px 0 0; padding-left: 20px; }
+    .rg-kurz li { margin-bottom: 5px; }
+    .rg-quellen { font-size: 14px; opacity: .9; }
+    .rg-quellen li { font-size: 14px !important; margin-bottom: 4px; }
+    .rg-weiter { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin: 12px 0 26px; }
+    .rg-weiter a { display: block; border: 1px solid rgba(127,127,127,.35); border-radius: 10px; padding: 12px 14px; text-decoration: none; font-weight: 700; }
+    .rg-weiter a span { display: block; font-weight: 400; font-size: 13.5px; opacity: .75; margin-top: 2px; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Arbeitsauftrag im Handwerk: Was auf den Auftragszettel gehört","description":"Was gehört auf einen Arbeitsauftrag? Angaben für Monteur und Büro, Stundenzettel und Regiebericht, Papier oder digital, mit Muster-Gliederung zum Übernehmen.","inLanguage":"de","datePublished":"2026-11-19","dateModified":"2026-11-19","author":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"publisher":{"@type":"Organization","name":"Dexware","url":"https://dexware.app/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://laufzettel.dexware.app/ratgeber-arbeitsauftrag.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Laufzettel","item":"https://laufzettel.dexware.app/"},{"@type":"ListItem","position":2,"name":"Ratgeber","item":"https://dexware.app/ratgeber.html"},{"@type":"ListItem","position":3,"name":"Arbeitsauftrag","item":"https://laufzettel.dexware.app/ratgeber-arbeitsauftrag.html"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was muss auf einem Arbeitsauftrag stehen?","acceptedAnswer":{"@type":"Answer","text":"Mindestens Kunde mit Adresse und Telefon, Termin, eine eindeutige Beschreibung der Arbeit, der zuständige Monteur und Hinweise vor Ort. Nach der Arbeit kommen Zeiten, erledigte Arbeiten, Material, Fotos und der Status dazu."}},{"@type":"Question","name":"Ist ein Arbeitsauftrag gesetzlich vorgeschrieben?","acceptedAnswer":{"@type":"Answer","text":"Nein, ein Pflichtformular gibt es nicht. Als Beleg für die Abrechnung nach Aufwand und als Grundlage der Arbeitszeitaufzeichnung ist ein vollständiger Auftragszettel aber sehr nützlich."}},{"@type":"Question","name":"Muss der Kunde den Stundenzettel unterschreiben?","acceptedAnswer":{"@type":"Answer","text":"Gesetzlich nicht allgemein, aber bei Abrechnung nach Aufwand ist die Bestätigung des Kunden der beste Nachweis. Bei VOB/B-Verträgen sind Stundenlohnzettel beim Auftraggeber einzureichen und von ihm zu bestätigen."}},{"@type":"Question","name":"Was ist ein Regiebericht?","acceptedAnswer":{"@type":"Answer","text":"So heißt in Österreich der Nachweis über Arbeiten, die nach Aufwand (in Regie) abgerechnet werden: Arbeitszeit, Personal, Material und Geräte, meist vom Auftraggeber bestätigt."}},{"@type":"Question","name":"Reicht der Auftragszettel als Arbeitszeiterfassung?","acceptedAnswer":{"@type":"Answer","text":"Nur, wenn darüber alle Arbeitszeiten erfasst werden, also auch Fahrten, Werkstatt, Lager und Büro. Sonst ist er eine gute Grundlage, aber keine vollständige Aufzeichnung."}}]}</script>
+  <style>
+    /* Ratgeber-Unterseite auf Basis der Startseiten-Gestaltung */
+    .rg { max-width: 820px; padding-top: 30px; padding-bottom: 64px; }
+    .rg-crumb { font-size: 13px; color: var(--muted); margin: 6px 0 18px; }
+    .rg a:not(.btn) { color: var(--accent-text); }
+    .rg-kicker { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-text); margin: 0 0 6px; }
+    .rg h1 { font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; margin: 8px 0 16px; }
+    .rg h2 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 44px 0 12px; }
+    .rg h3 { font-size: 18px; font-weight: 700; margin: 24px 0 8px; }
+    .rg p, .rg li { font-size: 16.5px; line-height: 1.7; color: color-mix(in oklab, var(--ink) 86%, transparent); }
+    .rg p { margin: 0 0 14px; }
+    .rg ul, .rg ol { padding-left: 22px; margin: 4px 0 18px; }
+    .rg li { margin-bottom: 6px; }
+    .rg strong { color: var(--ink); }
+    .rg .rg-lead { font-size: 18.5px; color: var(--muted); }
+    .rg .rg-stand { font-size: 13px; color: var(--muted); }
+    .rg-cta { border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); padding: 24px 24px 26px; margin: 44px 0 10px; }
+    .rg-cta h3 { margin-top: 0; font-size: 21px; }
+    .rg-faq { border-top: 1px solid var(--border); }
+    .rg-faq details { border-bottom: 1px solid var(--border); }
+    .rg-faq summary { cursor: pointer; list-style: none; font-weight: 650; font-size: 16.5px; padding: 15px 28px 15px 0; position: relative; }
+    .rg-faq summary::-webkit-details-marker { display: none; }
+    .rg-faq summary::after { content: '+'; position: absolute; right: 2px; top: 11px; font-size: 22px; color: var(--accent-text); }
+    .rg-faq details[open] summary::after { content: '\2013'; }
+    .rg-faq details p { margin: 0 0 16px; }
+    .rg .rg-hinweis { font-size: 13.5px; color: var(--muted); border-top: 1px solid var(--border); padding-top: 14px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Laufzettel Startseite"><img src="assets/apps/laufzettel.webp" alt="" width="32" height="32" /><span class="wm">Laufzettel</span></a>
+      <nav aria-label="Seitennavigation"><a href="index.html#funktionen">Funktionen</a><a href="index.html#preise">Preise</a><a href="index.html#faq">FAQ</a></nav>
+      <a class="btn sm" href="index.html#ablauf">Bald verfügbar</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap rg">
+      <p class="rg-crumb"><a href="index.html">Start</a> › Ratgeber › Arbeitsauftrag</p>
+      <p class="rg-kicker">Ratgeber</p>
+      <h1>Arbeitsauftrag im Handwerk: <em>Was auf den Auftragszettel gehört</em></h1>
+      <p class="land-hinweis" style="margin:16px 0 20px;padding:12px 16px;border:1px solid rgba(127,127,127,.35);border-radius:12px;font-size:14.5px;line-height:1.55"><strong>Gilt für welches Land?</strong> Für einen Arbeitsauftrag gibt es weder in <strong>Deutschland</strong> noch in <strong>Österreich</strong> oder der <strong>Schweiz</strong> ein Pflichtformular. Wichtig wird er als Beleg: für die Abrechnung nach Aufwand (in Deutschland Stundenlohnzettel, in Österreich Regiebericht) und als Grundlage der Arbeitszeitaufzeichnung.</p>
+      <p class="rg-stand">Stand: November 2026 · Lesezeit ca. 5 Minuten · Für Handwerk, Reinigung, Hausmeisterdienste und Montage</p>
+      <p class="rg-lead">Der Auftragszettel ist das Bindeglied zwischen Büro, Monteur und Kunde. Fehlt eine Angabe, wird nachtelefoniert; fehlt der Nachweis, wird über die Rechnung gestritten. Diese Seite zeigt, <strong>was auf einen guten Arbeitsauftrag gehört</strong> — und was danach zurückkommen sollte.</p>
+
+      <div class="rg-kurz"><b>Die Antwort in Kürze</b>
+  <ul>
+    <li><strong>Vorher</strong> (Büro → Monteur): Kunde, Adresse, Ansprechpartner mit Telefon, Termin, was zu tun ist, Material, zuständiger Monteur.</li>
+    <li><strong>Nachher</strong> (Monteur → Büro): Beginn, Ende und Pausen, erledigte Arbeiten, verbrauchtes Material, Fotos, offene Punkte oder Folgetermin.</li>
+    <li>Bei Abrechnung nach Aufwand dient der Zettel als <strong>Stundenzettel bzw. Regiebericht</strong> — am besten vom Kunden bestätigt.</li>
+    <li>Papier geht, digital spart Abtippen und zeigt, ob der Auftrag angekommen ist.</li>
+  </ul>
+</div>
+
+      <h2>Die Angaben im Überblick</h2>
+<div class="rg-scroll">
+  <table class="rg-table">
+    <thead><tr><th>Bereich</th><th>Angabe</th><th>Warum</th></tr></thead>
+    <tbody>
+      <tr><td>Kunde</td><td>Name, Adresse, Ansprechpartner vor Ort, Telefon</td><td>Monteur findet hin und kann anrufen</td></tr>
+      <tr><td>Termin</td><td>Datum, Uhrzeit oder Zeitfenster, Dringlichkeit</td><td>Tagesplanung, Kunde ist da</td></tr>
+      <tr><td>Auftrag</td><td>kurze, eindeutige Beschreibung, ggf. Angebots- oder Auftragsnummer</td><td>kein Rätselraten auf der Baustelle</td></tr>
+      <tr><td>Hinweise</td><td>Zugang, Schlüssel, Parken, Haustiere, Besonderheiten</td><td>spart Wartezeit</td></tr>
+      <tr><td>Material und Werkzeug</td><td>was mit muss bzw. vor Ort ist</td><td>keine Leerfahrten</td></tr>
+      <tr><td>Zuständig</td><td>Monteur bzw. Team</td><td>klare Verantwortung</td></tr>
+      <tr><td>Zeiten</td><td>Beginn, Pausen, Ende (ggf. Fahrzeit getrennt)</td><td>Abrechnung und Arbeitszeit</td></tr>
+      <tr><td>Ergebnis</td><td>erledigte Arbeiten, Material, Fotos, Notiz</td><td>Rechnung und Nachweis</td></tr>
+      <tr><td>Abschluss</td><td>fertig / Kunde nicht angetroffen / Folgetermin nötig</td><td>Büro weiß, wie es weitergeht</td></tr>
+      <tr><td>Bestätigung</td><td>Name und Unterschrift des Kunden (bei Aufwand)</td><td>weniger Streit über Stunden</td></tr>
+    </tbody>
+  </table>
+</div>
+
+      <h2>Arbeitsauftrag, Stundenzettel, Regiebericht — was ist was?</h2>
+      <p>
+        Der <strong>Arbeitsauftrag</strong> sagt, was zu tun ist. Der <strong>Stundenzettel</strong> hält fest, wie lange
+        gearbeitet wurde und mit welchem Material. In Österreich heißt der bestätigte Nachweis über Arbeiten nach
+        Aufwand meist <strong>Regiebericht</strong> oder Regieschein. In der Praxis sind das oft ein und dasselbe
+        Blatt: oben der Auftrag, unten Zeiten, Material und die Unterschrift.
+      </p>
+      <p>
+        Bei Bauverträgen nach <strong>VOB/B</strong> verlangt § 15 Abs. 3, dass Stundenlohnzettel je nach Verkehrssitte
+        werktäglich oder wöchentlich beim Auftraggeber eingereicht werden. In Österreich enthält die
+        <strong>ÖNORM B 2110</strong> Regeln für die Abrechnung von Regieleistungen, wenn sie vereinbart ist. Ohne solche
+        Vereinbarungen gilt: Wer nach Aufwand abrechnet, muss den Aufwand im Streitfall belegen — ein zeitnah
+        ausgefüllter, bestätigter Zettel ist dafür der beste Beleg.
+      </p>
+
+      <h2>Und die Arbeitszeit?</h2>
+      <p>
+        Arbeitgeber müssen die Arbeitszeit ihrer Beschäftigten aufzeichnen — in Deutschland nach der Rechtsprechung
+        des Bundesarbeitsgerichts (Beschluss vom 13.09.2022, 1 ABR 22/21), in Österreich nach § 26
+        Arbeitszeitgesetz. Zeiten aus Arbeitsaufträgen sind dafür eine gute Grundlage. Eine vollständige
+        Arbeitszeitaufzeichnung sind sie aber nur, wenn auch Fahrten, Lager, Werkstatt und Büro erfasst werden.
+      </p>
+
+      <h2>Papier oder digital?</h2>
+      <ul>
+        <li><strong>Papier:</strong> funktioniert überall, aber Zettel gehen verloren, sind schwer lesbar und müssen abgetippt werden. Ob der Auftrag angekommen ist, sieht das Büro erst am Abend.</li>
+        <li><strong>Digital:</strong> Auftrag kommt aufs Handy, das Büro sieht „gesehen“, „läuft“, „fertig“, Fotos und Zeiten sind sofort da. Wichtig: Funktioniert es im Funkloch, und wird niemand dauerhaft geortet?</li>
+      </ul>
+
+      <h2>Muster-Gliederung zum Übernehmen</h2>
+      <ol>
+        <li>Auftragsnummer, Datum, Termin</li>
+        <li>Kunde, Adresse, Ansprechpartner, Telefon</li>
+        <li>Auftragsbeschreibung und Hinweise vor Ort</li>
+        <li>Monteur / Team</li>
+        <li>Beginn, Pausen, Ende</li>
+        <li>Ausgeführte Arbeiten und Material</li>
+        <li>Fotos (vorher/nachher) und Notiz</li>
+        <li>Status: fertig, Kunde nicht angetroffen, Folgetermin nötig</li>
+        <li>Bestätigung durch den Kunden (Name, Datum, Unterschrift)</li>
+      </ol>
+
+      <h2>Quellen</h2>
+<ul class="rg-quellen">
+  <li>VOB/B § 15 Stundenlohnarbeiten (Deutschland, bei Vereinbarung)</li>
+  <li>ÖNORM B 2110 Allgemeine Vertragsbestimmungen für Bauleistungen (Österreich, bei Vereinbarung)</li>
+  <li>BAG, Beschluss vom 13.09.2022 – 1 ABR 22/21; § 26 Arbeitszeitgesetz (Österreich)</li>
+</ul>
+
+      <div class="rg-cta">
+        <h3>Der Laufzettel aufs Handy</h3>
+        <p>Mit <b>Laufzettel</b> verteilst du Aufträge mit Kunde, Termin und Monteur. Der Monteur tippt „Gesehen“, „Arbeit starten“ und „Fertig“, hängt bis zu sechs Fotos und eine Notiz an oder meldet „Kunde nicht angetroffen“ bzw. „Folgetermin nötig“. Die Arbeitszeit zählt mit, im Funkloch wartet jeder Tipp am Handy. Laufzettel ist bald verfügbar.</p>
+        <a class="btn" href="index.html">Laufzettel ansehen</a>
+      </div>
+
+      <h2>Häufige Fragen</h2>
+      <div class="rg-faq">
+        <details><summary>Was muss auf einem Arbeitsauftrag stehen?</summary><p>Mindestens Kunde mit Adresse und Telefon, Termin, eine eindeutige Beschreibung der Arbeit, der zuständige Monteur und Hinweise vor Ort. Nach der Arbeit kommen Zeiten, erledigte Arbeiten, Material, Fotos und der Status dazu.</p></details>
+        <details><summary>Ist ein Arbeitsauftrag gesetzlich vorgeschrieben?</summary><p>Nein, ein Pflichtformular gibt es nicht. Als Beleg für die Abrechnung nach Aufwand und als Grundlage der Arbeitszeitaufzeichnung ist ein vollständiger Auftragszettel aber sehr nützlich.</p></details>
+        <details><summary>Muss der Kunde den Stundenzettel unterschreiben?</summary><p>Gesetzlich nicht allgemein, aber bei Abrechnung nach Aufwand ist die Bestätigung des Kunden der beste Nachweis. Bei VOB/B-Verträgen sind Stundenlohnzettel beim Auftraggeber einzureichen und von ihm zu bestätigen.</p></details>
+        <details><summary>Was ist ein Regiebericht?</summary><p>So heißt in Österreich der Nachweis über Arbeiten, die nach Aufwand (in Regie) abgerechnet werden: Arbeitszeit, Personal, Material und Geräte, meist vom Auftraggeber bestätigt.</p></details>
+        <details><summary>Reicht der Auftragszettel als Arbeitszeiterfassung?</summary><p>Nur, wenn darüber alle Arbeitszeiten erfasst werden, also auch Fahrten, Werkstatt, Lager und Büro. Sonst ist er eine gute Grundlage, aber keine vollständige Aufzeichnung.</p></details>
+      </div>
+
+      <h2>Weiterlesen</h2>
+<div class="rg-weiter">
+  <a href="https://objektdex.dexware.app/ratgeber-leistungsnachweis-hausbetreuung.html">Leistungsnachweis Hausbetreuung<span>Was in den Nachweis für die Hausverwaltung gehört</span></a>
+  <a href="https://craftdex.dexware.app/ratgeber-baustellendokumentation.html">Baustellendokumentation<span>Was festgehalten werden sollte</span></a>
+  <a href="https://dexware.app/ratgeber.html">Alle Ratgeber von Dexware<span>Pflichten und Fristen im Überblick</span></a>
+</div>
+
+      <p class="rg-hinweis">Dieser Ratgeber gibt einen allgemeinen Überblick (Stand 11/2026) und ersetzt keine Rechtsberatung. Maßgeblich sind die Vereinbarungen mit dem Kunden und die jeweils geltenden Gesetze und Normen.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Laufzettel · ein Produkt von <a href="https://dexware.app/">Dexware</a></span>
+      <nav aria-label="Rechtliches"><a href="ratgeber-arbeitsauftrag.html">Ratgeber</a><a href="impressum.html">Impressum</a><a href="agb.html">AGB</a><a href="datenschutz.html">Datenschutz</a><a href="konto-loeschung.html">Konto löschen</a><a href="mailto:support@dexware.app?subject=Laufzettel%20Support">Support</a></nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var top = document.querySelector('.top');
+      var onScroll = function () { top.classList.toggle('scrolled', window.scrollY > 8); };
+      onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+      var wall = document.querySelector('.wall');
+      if (wall && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { wall.classList.toggle('paused', !es[0].isIntersecting); }).observe(wall);
+      }
+      var els = document.querySelectorAll('.rv');
+      if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        els.forEach(function (e) { e.classList.add('in'); }); return;
+      }
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
+</body>
+</html>
