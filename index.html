@@ -291,7 +291,7 @@
     }
 
     /* Einblenden beim Scrollen — nur mit JS und ohne reduzierte Bewegung */
-    .js .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+    .js .rv { opacity: 0; transform: translateY(32px); transition: opacity .7s ease, transform .85s cubic-bezier(.16,.84,.24,1); }
     .js .rv.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
