@@ -408,6 +408,16 @@
       box-shadow: 0 5px 8px -2px rgba(0,0,0,.7); }
     .row-phones .p1 { transform: rotate(-4deg) translateY(30px); } .row-phones .p2 { transform: rotate(2.5deg) translateY(4px); }
     .row-phones .p3 { transform: rotate(-1.5deg) translateY(22px); } .row-phones .p4 { transform: rotate(3.5deg); } .row-phones .p5 { transform: rotate(-3deg) translateY(26px); }
+    @media (prefers-reduced-motion: no-preference) {
+      .row-phones:not(.band) .phone { animation: row-in 1s cubic-bezier(.16,.84,.24,1) both, row-bob 7s ease-in-out 1.4s infinite; }
+      .row-phones:not(.band) .p2, .row-phones:not(.band) .p4 { animation-delay: .14s, 2.3s; }
+      .row-phones:not(.band) .p1, .row-phones:not(.band) .p5 { animation-delay: .28s, 3.2s; }
+    }
+    @keyframes row-in { from { opacity: 0; translate: 0 120px; scale: .9; } }
+    @keyframes row-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+    @keyframes row-fan-1 { from { opacity: 0; rotate: 22deg; translate: 0 60px; } } @keyframes row-fan-2 { from { opacity: 0; rotate: 11deg; translate: 0 60px; } }
+    @keyframes row-fan-4 { from { opacity: 0; rotate: -11deg; translate: 0 60px; } } @keyframes row-fan-5 { from { opacity: 0; rotate: -22deg; translate: 0 60px; } }
+    @keyframes row-shelf { from { opacity: 0; scale: .2 1; } }
     @media (max-width: 900px) {
       .hero.st-row-h > .wrap { padding-top: 40px; }
       .hero.st-row-h .ticks { justify-content: flex-start; text-align: left; }
